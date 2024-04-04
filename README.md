@@ -21,7 +21,24 @@
 - [ ] Named Entity Recognition
 - [ ] Text classification
 
-## 💪Installation
+## Local Development Setup
+
+### 🚀 Installation
+
+```bash
+git clone https://github.com/senghorn/khmer-nltk.git
+cd khmer-nltk
+python setup.py install
+```
+
+### 🧪 Testing (Testing word tokenization)
+
+```bash
+cd scripts
+python run.py -f word_tokenize
+```
+
+## 💪Installation with PyPI
 
 ```bash
 pip install khmer-nltk

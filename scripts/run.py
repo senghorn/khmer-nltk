@@ -12,7 +12,7 @@ parser.add_argument(
     "-i",
     "--input_file",
     type=str,
-    # default="samples/input.txt",
+    default="../samples/input.txt",
     help="path to the non-tokenized input text file",
 )
 
@@ -20,7 +20,7 @@ parser.add_argument(
     "-o",
     "--output_file",
     type=str,
-    # default="samples/output.txt",
+    default="../samples/output.txt",
     help="path to the expected tokenized output file",
 )
 
@@ -31,7 +31,7 @@ args = parser.parse_args()
 
 if __name__ == "__main__":
 
-    with open(args.input_file, "r") as f:
+    with open(args.input_file, "r", encoding='utf-8') as f:
         sentences = f.read().strip().split("\n")
 
     if args.function == "sentence_tokenize":
@@ -49,5 +49,5 @@ if __name__ == "__main__":
         str_outputs = str(function(sentence))
         outputs.append(str_outputs)
 
-    with open(args.output_file, "w") as f:
+    with open(args.output_file, "w", encoding='utf-8') as f:
         f.write("\n".join(outputs))
